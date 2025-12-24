@@ -3,203 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iLabPDF – Free Online PDF Tools</title>
-
-    <meta name="description"
-          content="iLabPDF provides free online PDF tools: JPG to PDF, PDF to JPG, Merge PDF, Split PDF, Compress PDF, PDF to Word, Word to PDF, Rotate PDF, Unlock PDF, Protect PDF and more.">
-    <meta name="keywords"
-          content="pdf tools, ilabpdf, jpg to pdf, pdf to jpg, merge pdf, split pdf, compress pdf, pdf to word, word to pdf">
-    <meta name="author" content="iLabPDF Team">
+    <title>JPG to PDF Converter – iLabPDF</title>
 
     <style>
         body {
             margin: 0;
-            font-family: 'Segoe UI', sans-serif;
+            padding: 0;
+            font-family: Arial, sans-serif;
             background: #0b0f19;
-            color: #e5e7eb;
+            color: white;
+            text-align: center;
         }
 
-        /* HEADER */
-        header {
-            text-align: center;
-            padding: 40px 20px;
-            background: linear-gradient(135deg, #0e1628, #0b0f19);
-            border-bottom: 1px solid rgba(255,255,255,0.06);
+        .container {
+            max-width: 450px;
+            margin: 50px auto;
+            background: #111827;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.08);
         }
 
         h1 {
-            font-size: 32px;
-            font-weight: 700;
             color: #4ea1ff;
-            text-shadow: 0 0 10px rgba(78,161,255,0.6);
+            margin-bottom: 10px;
         }
 
-        .subhead {
-            font-size: 16px;
+        p {
             opacity: 0.8;
-            margin-top: 8px;
+            font-size: 14px;
         }
 
-        /* TOOLS GRID */
-        .tools-container {
-            max-width: 1150px;
-            margin: 40px auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 22px;
+        input {
+            margin-top: 18px;
+            padding: 12px;
+            width: 100%;
+            border-radius: 8px;
+            border: none;
         }
 
-        .tool-box {
-            background: #111827;
-            padding: 22px;
-            border-radius: 14px;
-            text-align: center;
-            border: 1px solid rgba(255,255,255,0.05);
-            transition: 0.25s ease;
+        button {
+            margin-top: 18px;
+            width: 100%;
+            padding: 14px;
+            background: #4ea1ff;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 16px;
             cursor: pointer;
         }
 
-        .tool-box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(78,161,255,0.25);
-            border-color: rgba(78,161,255,0.7);
+        button:hover {
+            background: #67b1ff;
         }
 
-        .tool-box h3 {
-            margin-top: 12px;
-            font-size: 17px;
-            color: #4ea1ff;
-        }
-
-        .tool-box p {
-            font-size: 13px;
-            opacity: 0.7;
-            margin-top: 6px;
-        }
-
-        /* FOOTER */
         footer {
-            margin-top: 60px;
-            padding: 40px 20px;
-            text-align: center;
-            background: #0a0e17;
-            border-top: 1px solid rgba(255,255,255,0.08);
-        }
-
-        footer a {
-            color: #4ea1ff;
-            text-decoration: none;
-            margin: 0 12px;
-            font-size: 14px;
-            opacity: 0.8;
-        }
-
-        footer a:hover {
-            opacity: 1;
-            text-decoration: underline;
-        }
-
-        .copy {
-            margin-top: 18px;
+            margin-top: 40px;
+            opacity: 0.6;
             font-size: 13px;
-            opacity: 0.5;
         }
     </style>
-
 </head>
+
 <body>
 
-<header>
-    <h1>iLabPDF – Free PDF Tools</h1>
-    <p class="subhead">Fast • Secure • Free PDF Converters & Editors</p>
-</header>
+<div class="container">
+    <h1>JPG to PDF</h1>
+    <p>Select JPG images and convert them into a PDF file instantly.</p>
 
-<div class="tools-container">
+    <input type="file" id="images" accept="image/*" multiple>
 
-    <!-- 1 JPG to PDF -->
-    <div class="tool-box" onclick="location.href='./tools/jpg-to-pdf.html'">
-        <h3>JPG to PDF</h3>
-        <p>Convert JPG images into a single PDF file.</p>
-    </div>
-
-    <!-- 2 PDF to JPG -->
-    <div class="tool-box" onclick="location.href='./tools/pdf-to-jpg.html'">
-        <h3>PDF to JPG</h3>
-        <p>Extract high quality JPG images from PDF.</p>
-    </div>
-
-    <!-- 3 Merge PDF -->
-    <div class="tool-box" onclick="location.href='./tools/merge-pdf.html'">
-        <h3>Merge PDF</h3>
-        <p>Combine multiple PDF files into one.</p>
-    </div>
-
-    <!-- 4 Split PDF -->
-    <div class="tool-box" onclick="location.href='./tools/split-pdf.html'">
-        <h3>Split PDF</h3>
-        <p>Split PDF pages into separate files.</p>
-    </div>
-
-    <!-- 5 Compress PDF -->
-    <div class="tool-box" onclick="location.href='./tools/compress-pdf.html'">
-        <h3>Compress PDF</h3>
-        <p>Reduce PDF size without losing quality.</p>
-    </div>
-
-    <!-- 6 PDF to Word -->
-    <div class="tool-box" onclick="location.href='./tools/pdf-to-word.html'">
-        <h3>PDF to Word</h3>
-        <p>Convert PDF to editable Word document.</p>
-    </div>
-
-    <!-- 7 Word to PDF -->
-    <div class="tool-box" onclick="location.href='./tools/word-to-pdf.html'">
-        <h3>Word to PDF</h3>
-        <p>Convert Word files into PDF format.</p>
-    </div>
-
-    <!-- 8 Rotate PDF -->
-    <div class="tool-box" onclick="location.href='./tools/rotate-pdf.html'">
-        <h3>Rotate PDF</h3>
-        <p>Rotate PDF pages left or right.</p>
-    </div>
-
-    <!-- 9 Protect PDF -->
-    <div class="tool-box" onclick="location.href='./tools/protect-pdf.html'">
-        <h3>Protect PDF</h3>
-        <p>Add password to secure your PDF file.</p>
-    </div>
-
-    <!-- 10 Unlock PDF -->
-    <div class="tool-box" onclick="location.href='./tools/unlock-pdf.html'">
-        <h3>Unlock PDF</h3>
-        <p>Remove password from protected PDFs.</p>
-    </div>
-
-    <!-- 11 Extract Pages -->
-    <div class="tool-box" onclick="location.href='./tools/extract-pages.html'">
-        <h3>Extract Pages</h3>
-        <p>Export selected PDF pages.</p>
-    </div>
-
-    <!-- 12 Watermark PDF -->
-    <div class="tool-box" onclick="location.href='./tools/watermark-pdf.html'">
-        <h3>Watermark PDF</h3>
-        <p>Add watermark text or image into PDF.</p>
-    </div>
-
+    <button onclick="convertToPDF()">Convert to PDF</button>
 </div>
 
 <footer>
-    <a href="./pages/about.html">About</a>
-    <a href="./pages/contact.html">Contact</a>
-    <a href="./pages/privacy.html">Privacy</a>
-    <a href="./pages/terms.html">Terms</a>
-    <a href="./pages/faq.html">FAQ</a>
-
-    <p class="copy">© iLabPDF 2025 – Free Online PDF Tools</p>
+    © 2025 iLabPDF – JPG to PDF Converter
 </footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script>
+    async function convertToPDF() {
+        const { jsPDF } = window.jspdf;
+        const pdf = new jsPDF();
+
+        let files = document.getElementById("images").files;
+
+        if (files.length === 0) {
+            alert("Please select at least one JPG image.");
+            return;
+        }
+
+        for (let i = 0; i < files.length; i++) {
+            let img = await readFileAsDataURL(files[i]);
+
+            if (i > 0) pdf.addPage();
+            pdf.addImage(img, "JPEG", 10, 10, 190, 270);
+        }
+
+        pdf.save("converted.pdf");
+    }
+
+    function readFileAsDataURL(file) {
+        return new Promise((resolve) => {
+            let reader = new FileReader();
+            reader.onload = () => resolve(reader.result);
+            reader.readAsDataURL(file);
+        });
+    }
+</script>
 
 </body>
 </html>
