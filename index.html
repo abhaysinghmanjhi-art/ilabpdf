@@ -194,42 +194,6 @@
     </details>
 
 </div>
-<footer>
-    © iLabPDF 2025 — Free JPG to PDF Converter
-</footer>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
-<script>
-    async function convertToPDF() {
-        const { jsPDF } = window.jspdf;
-        const pdf = new jsPDF();
-
-        let files = document.getElementById("images").files;
-
-        if (files.length === 0) {
-            alert("Please select at least one image.");
-            return;
-        }
-
-        for (let i = 0; i < files.length; i++) {
-            let img = await readFileAsDataURL(files[i]);
-
-            if (i > 0) pdf.addPage();
-            pdf.addImage(img, "JPEG", 10, 10, 190, 270);
-        }
-
-        pdf.save("converted.pdf");
-    }
-
-    function readFileAsDataURL(file) {
-        return new Promise((resolve) => {
-            let reader = new FileReader();
-            reader.onload = () => resolve(reader.result);
-            reader.readAsDataURL(file);
-        });
-    }
-</script>
 <footer style="margin-top:60px; padding:40px 20px; background:#0a0e17; border-top:1px solid rgba(255,255,255,0.08);">
 
     <h2 style="color:#ffffff; font-size:20px; margin-bottom:10px;">Image Converter</h2>
@@ -265,6 +229,43 @@
     </p>
 
 </footer>
+    <footer>
+    © iLabPDF 2025 — Free JPG to PDF Converter
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script>
+    async function convertToPDF() {
+        const { jsPDF } = window.jspdf;
+        const pdf = new jsPDF();
+
+        let files = document.getElementById("images").files;
+
+        if (files.length === 0) {
+            alert("Please select at least one image.");
+            return;
+        }
+
+        for (let i = 0; i < files.length; i++) {
+            let img = await readFileAsDataURL(files[i]);
+
+            if (i > 0) pdf.addPage();
+            pdf.addImage(img, "JPEG", 10, 10, 190, 270);
+        }
+
+        pdf.save("converted.pdf");
+    }
+
+    function readFileAsDataURL(file) {
+        return new Promise((resolve) => {
+            let reader = new FileReader();
+            reader.onload = () => resolve(reader.result);
+            reader.readAsDataURL(file);
+        });
+    }
+</script>
+
 
 </body>
 </html>
