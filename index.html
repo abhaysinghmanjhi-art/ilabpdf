@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JPG to PDF Converter – iLabPDF</title>
+    <title>JPG to PDF Converter – Free Online | iLabPDF</title>
+
+    <meta name="description"
+          content="Convert JPG images to PDF easily with iLabPDF. Fast, secure and free JPG to PDF converter that works on all devices. No signup required.">
+    <meta name="keywords"
+          content="jpg to pdf, convert jpg to pdf, image to pdf, online pdf converter, ilabpdf">
+    <meta name="author" content="iLabPDF">
 
     <style>
         body {
@@ -12,30 +18,35 @@
             font-family: Arial, sans-serif;
             background: #0b0f19;
             color: white;
-            text-align: center;
         }
 
-        .container {
-            max-width: 450px;
-            margin: 50px auto;
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #10203a, #0b0f19);
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #4ea1ff;
+        }
+
+        .sub {
+            opacity: 0.8;
+            margin-top: 8px;
+        }
+
+        .box {
+            max-width: 480px;
+            margin: 25px auto;
             background: #111827;
             padding: 25px;
             border-radius: 12px;
             border: 1px solid rgba(255,255,255,0.08);
-        }
-
-        h1 {
-            color: #4ea1ff;
-            margin-bottom: 10px;
-        }
-
-        p {
-            opacity: 0.8;
-            font-size: 14px;
+            text-align: center;
         }
 
         input {
-            margin-top: 18px;
             padding: 12px;
             width: 100%;
             border-radius: 8px;
@@ -50,35 +61,103 @@
             border: none;
             border-radius: 10px;
             color: white;
-            font-size: 16px;
+            font-size: 17px;
             cursor: pointer;
+            font-weight: bold;
         }
 
         button:hover {
             background: #67b1ff;
         }
 
+        .content {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            line-height: 1.7;
+            opacity: 0.9;
+        }
+
+        h2 {
+            color: #4ea1ff;
+            margin-top: 35px;
+        }
+
+        .faq-item {
+            background: #111827;
+            padding: 12px 18px;
+            border-radius: 10px;
+            margin: 12px 0;
+            cursor: pointer;
+        }
+
+        .faq-item:hover {
+            background: #1a2437;
+        }
+
         footer {
-            margin-top: 40px;
-            opacity: 0.6;
-            font-size: 13px;
+            margin-top: 50px;
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            opacity: 0.7;
         }
     </style>
 </head>
 
 <body>
 
-<div class="container">
-    <h1>JPG to PDF</h1>
-    <p>Select JPG images and convert them into a PDF file instantly.</p>
+<header>
+    <h1>JPG to PDF Converter</h1>
+    <p class="sub">Fast • Secure • Free Image to PDF Tool</p>
+</header>
 
+<div class="box">
+    <h2>Select Images</h2>
     <input type="file" id="images" accept="image/*" multiple>
-
     <button onclick="convertToPDF()">Convert to PDF</button>
 </div>
 
+<div class="content">
+    <h2>How to Convert JPG to PDF Online?</h2>
+    <p>
+        Converting images into PDF format is now easier than ever with iLabPDF. You don’t need any software,
+        computer skills, or paid tools. This JPG to PDF converter works directly inside your browser —
+        meaning your images never leave your device. It is 100% safe, fast, and completely free.
+    </p>
+
+    <h3>Follow these simple steps:</h3>
+    <ul>
+        <li>Step 1: Click on the “Select Images” button above.</li>
+        <li>Step 2: Choose one or multiple JPG pictures.</li>
+        <li>Step 3: Click on “Convert to PDF”.</li>
+        <li>Step 4: Your PDF will be downloaded automatically.</li>
+    </ul>
+
+    <h2>Why Use Our JPG to PDF Converter?</h2>
+    <p>
+        Many online PDF tools upload your images to their servers, which is unsafe. Our tool processes everything on
+        your device using modern browser technology. You don’t need to wait for uploads or worry about privacy.
+        Whether you are a student, office worker, or someone who needs compact documents for WhatsApp, forms, or email,
+        this tool solves the problem instantly.
+    </p>
+
+    <p>
+        It works on Android, iPhone, Windows, and every browser.
+        No signup • No watermarks • No limits.
+    </p>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">⭐ Is this JPG to PDF converter free?</div>
+    <div class="faq-item">⭐ Are my images uploaded to a server?</div>
+    <div class="faq-item">⭐ Can I convert multiple images at once?</div>
+    <div class="faq-item">⭐ Does this work on mobile phones?</div>
+    <div class="faq-item">⭐ Will the PDF quality be good?</div>
+</div>
+
 <footer>
-    © 2025 iLabPDF – JPG to PDF Converter
+    © iLabPDF 2025 — Free JPG to PDF Converter
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -91,7 +170,7 @@
         let files = document.getElementById("images").files;
 
         if (files.length === 0) {
-            alert("Please select at least one JPG image.");
+            alert("Please select at least one image.");
             return;
         }
 
