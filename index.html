@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iLabPDF – Free Online PDF Tools</title>
+
+    <meta name="description"
+          content="iLabPDF provides free online PDF tools: JPG to PDF, PDF to JPG, Merge PDF, Split PDF, Compress PDF, PDF to Word, Word to PDF, Rotate PDF, Unlock PDF, Protect PDF and more.">
+    <meta name="keywords"
+          content="pdf tools, ilabpdf, jpg to pdf, pdf to jpg, merge pdf, split pdf, compress pdf, pdf to word, word to pdf">
+    <meta name="author" content="iLabPDF Team">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: #0b0f19;
+            color: #e5e7eb;
+        }
+
+        /* HEADER */
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #0e1628, #0b0f19);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #4ea1ff;
+            text-shadow: 0 0 10px rgba(78,161,255,0.6);
+        }
+
+        .subhead {
+            font-size: 16px;
+            opacity: 0.8;
+            margin-top: 8px;
+        }
+
+        /* TOOLS GRID */
+        .tools-container {
+            max-width: 1150px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 22px;
+        }
+
+        .tool-box {
+            background: #111827;
+            padding: 22px;
+            border-radius: 14px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: 0.25s ease;
+            cursor: pointer;
+        }
+
+        .tool-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(78,161,255,0.25);
+            border-color: rgba(78,161,255,0.7);
+        }
+
+        .tool-box h3 {
+            margin-top: 12px;
+            font-size: 17px;
+            color: #4ea1ff;
+        }
+
+        .tool-box p {
+            font-size: 13px;
+            opacity: 0.7;
+            margin-top: 6px;
+        }
+
+        /* FOOTER */
+        footer {
+            margin-top: 60px;
+            padding: 40px 20px;
+            text-align: center;
+            background: #0a0e17;
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+
+        footer a {
+            color: #4ea1ff;
+            text-decoration: none;
+            margin: 0 12px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        footer a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        .copy {
+            margin-top: 18px;
+            font-size: 13px;
+            opacity: 0.5;
+        }
+    </style>
+
+</head>
+<body>
+
+<header>
+    <h1>iLabPDF – Free PDF Tools</h1>
+    <p class="subhead">Fast • Secure • Free PDF Converters & Editors</p>
+</header>
+
+<div class="tools-container">
+
+    <!-- 1 JPG to PDF -->
+    <div class="tool-box" onclick="location.href='./tools/jpg-to-pdf.html'">
+        <h3>JPG to PDF</h3>
+        <p>Convert JPG images into a single PDF file.</p>
+    </div>
+
+    <!-- 2 PDF to JPG -->
+    <div class="tool-box" onclick="location.href='./tools/pdf-to-jpg.html'">
+        <h3>PDF to JPG</h3>
+        <p>Extract high quality JPG images from PDF.</p>
+    </div>
+
+    <!-- 3 Merge PDF -->
+    <div class="tool-box" onclick="location.href='./tools/merge-pdf.html'">
+        <h3>Merge PDF</h3>
+        <p>Combine multiple PDF files into one.</p>
+    </div>
+
+    <!-- 4 Split PDF -->
+    <div class="tool-box" onclick="location.href='./tools/split-pdf.html'">
+        <h3>Split PDF</h3>
+        <p>Split PDF pages into separate files.</p>
+    </div>
+
+    <!-- 5 Compress PDF -->
+    <div class="tool-box" onclick="location.href='./tools/compress-pdf.html'">
+        <h3>Compress PDF</h3>
+        <p>Reduce PDF size without losing quality.</p>
+    </div>
+
+    <!-- 6 PDF to Word -->
+    <div class="tool-box" onclick="location.href='./tools/pdf-to-word.html'">
+        <h3>PDF to Word</h3>
+        <p>Convert PDF to editable Word document.</p>
+    </div>
+
+    <!-- 7 Word to PDF -->
+    <div class="tool-box" onclick="location.href='./tools/word-to-pdf.html'">
+        <h3>Word to PDF</h3>
+        <p>Convert Word files into PDF format.</p>
+    </div>
+
+    <!-- 8 Rotate PDF -->
+    <div class="tool-box" onclick="location.href='./tools/rotate-pdf.html'">
+        <h3>Rotate PDF</h3>
+        <p>Rotate PDF pages left or right.</p>
+    </div>
+
+    <!-- 9 Protect PDF -->
+    <div class="tool-box" onclick="location.href='./tools/protect-pdf.html'">
+        <h3>Protect PDF</h3>
+        <p>Add password to secure your PDF file.</p>
+    </div>
+
+    <!-- 10 Unlock PDF -->
+    <div class="tool-box" onclick="location.href='./tools/unlock-pdf.html'">
+        <h3>Unlock PDF</h3>
+        <p>Remove password from protected PDFs.</p>
+    </div>
+
+    <!-- 11 Extract Pages -->
+    <div class="tool-box" onclick="location.href='./tools/extract-pages.html'">
+        <h3>Extract Pages</h3>
+        <p>Export selected PDF pages.</p>
+    </div>
+
+    <!-- 12 Watermark PDF -->
+    <div class="tool-box" onclick="location.href='./tools/watermark-pdf.html'">
+        <h3>Watermark PDF</h3>
+        <p>Add watermark text or image into PDF.</p>
+    </div>
+
+</div>
+
+<footer>
+    <a href="./pages/about.html">About</a>
+    <a href="./pages/contact.html">Contact</a>
+    <a href="./pages/privacy.html">Privacy</a>
+    <a href="./pages/terms.html">Terms</a>
+    <a href="./pages/faq.html">FAQ</a>
+
+    <p class="copy">© iLabPDF 2025 – Free Online PDF Tools</p>
+</footer>
+
+</body>
+</html>
