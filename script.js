@@ -1,30 +1,41 @@
 // ---------- ELEMENTS ----------
 const fileInput = document.getElementById("images");
 const previewBox = document.getElementById("previewBox");
-const previewImage = document.getElementById("previewImage");
-const fileNameText = document.getElementById("fileName");
+const previewList = document.getElementById("previewList");
 const pdfReadyBox = document.getElementById("pdfReady");
 const downloadBtn = document.getElementById("downloadBtn");
 
+
 // ---------- SHOW PREVIEW ----------
 fileInput.addEventListener("change", function () {
-    let file = fileInput.files[0];
+    let files = fileInput.files;
 
-    if (!file) return;
+    if (files.length === 0) return;
 
-    // Preview Show
-    previewBox.style.display = "block";
+    previewBox.style.display = "block"; 
     pdfReadyBox.style.display = "none";
+    previewList.innerHTML = "";   // Clear old previews
 
-    // File Name
-    fileNameText.innerText = "Selected: " + file.name;
+    // MULTIPLE IMAGE PREVIEW
+    [...files].forEach(file => {
+        let reader = new FileReader();
+        reader.onload = function (e) {
 
-    // Image Read
-    let reader = new FileReader();
-    reader.onload = function (e) {
-        previewImage.src = e.target.result;
-    };
-    reader.readAsDataURL(file);
+            let div = document.createElement("div");
+            div.style.marginBottom = "15px";
+            div.style.textAlign = "center";
+
+            div.innerHTML = `
+                <p style="color:#4ea1ff; margin-bottom:5px; font-size:14px;">
+                    ${file.name}
+                </p>
+                <img src="${e.target.result}" style="max-width:100%; border-radius:10px;">
+            `;
+
+            previewList.appendChild(div);
+        };
+        reader.readAsDataURL(file);
+    });
 });
 
 
@@ -39,7 +50,6 @@ async function convertToPDF() {
         return;
     }
 
-    // Hide preview – show loading?
     previewBox.style.display = "none";
 
     for (let i = 0; i < files.length; i++) {
@@ -49,7 +59,7 @@ async function convertToPDF() {
         pdf.addImage(imgData, "JPEG", 10, 10, 190, 270);
     }
 
-    // Create Blob URL for download button
+    // BLOB PDF
     const pdfBlob = pdf.output("blob");
     const pdfUrl = URL.createObjectURL(pdfBlob);
 
@@ -60,12 +70,13 @@ async function convertToPDF() {
         a.click();
     };
 
-    // Show PDF Ready box
+    // Show Download Box
     pdfReadyBox.style.display = "block";
 }
 
 
-// ---------- READ FILE AS BASE64 ----------
+
+// ---------- READ FILE ----------
 function readFileAsDataURL(file) {
     return new Promise((resolve) => {
         let reader = new FileReader();
