@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+   <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,7 +8,7 @@
     <meta name="description"
           content="Convert JPG images to PDF easily with iLabPDF. Fast, secure and free JPG to PDF converter that works on all devices. No signup required.">
     <meta name="keywords"
-          content="jpg to pdf, convert jpg to pdf, image to pdf, online pdf converter, ilabpdf">
+          content="jpg to pdf, convert jpg to pdf, image to pdf, pdf maker, photo to pdf, ilabpdf">
     <meta name="author" content="iLabPDF">
 
     <style>
@@ -66,33 +66,22 @@
             font-weight: bold;
         }
 
-        button:hover {
-            background: #67b1ff;
-        }
+        button:hover { background: #67b1ff; }
 
         .content {
             max-width: 800px;
             margin: 40px auto;
             padding: 20px;
             line-height: 1.7;
-            opacity: 0.9;
         }
 
-        h2 {
-            color: #4ea1ff;
-            margin-top: 35px;
-        }
+        h2 { color: #4ea1ff; }
 
         .faq-item {
             background: #111827;
             padding: 12px 18px;
             border-radius: 10px;
             margin: 12px 0;
-            cursor: pointer;
-        }
-
-        .faq-item:hover {
-            background: #1a2437;
         }
 
         footer {
@@ -118,161 +107,83 @@
     <button onclick="convertToPDF()">Convert to PDF</button>
 </div>
 
+<!-- PREVIEW SECTION -->
+<div id="previewBox" style="max-width:480px;margin:20px auto;display:none;padding:15px;
+background:#111827;border-radius:12px;border:1px solid rgba(255,255,255,0.08);text-align:center;">
+    <h3 style="color:#4ea1ff;margin-bottom:10px;">Preview</h3>
+    <p id="fileName" style="margin-bottom:10px;color:#9ca3af;"></p>
+    <img id="previewImage" src="" style="max-width:100%;border-radius:10px;">
+</div>
+
+<button id="downloadPDF" style="display:none;margin:0 auto;width:200px; padding:12px;
+background:#22c55e;border:none;border-radius:10px;color:white;font-size:16px;
+font-weight:bold;cursor:pointer;">Download PDF</button>
+
+
 <div class="content">
 
     <h2>How to Convert JPG to PDF Online?</h2>
     <p>
-        Converting images into PDF format is now easier than ever with iLabPDF. You don’t need any software,
-        computer skills, or paid tools. This JPG to PDF converter works directly inside your browser —
-        meaning your images never leave your device. It is 100% safe, fast, and completely free.
+        Converting images into PDF format is now easier than ever with iLabPDF. No signup, no upload, completely safe.
+        Everything happens inside your device browser — your images never leave your phone.
     </p>
 
-    <!-- STEPS FIXED + CENTERED -->
-    <h2 style="text-align:center; color:#4ea1ff; margin-top:40px;">How to Convert JPG to PDF?</h2>
+    <!-- STEPS SECTION -->
+    <h2 style="text-align:center; margin-top:40px;">How to Convert JPG to PDF?</h2>
 
     <div style="max-width:850px; margin:25px auto; display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:20px;">
-        <div style="background:#111827; padding:20px; border-radius:12px; border:1px solid rgba(255,255,255,0.08); text-align:center;">
-            <h3 style="color:#4ea1ff; margin-bottom:10px;">Step 1</h3>
-            <p>Select JPG images using the button above.</p>
+        <div style="background:#111827;padding:20px;border-radius:12px;border:1px solid rgba(255,255,255,0.08);text-align:center;">
+            <h3 style="color:#4ea1ff;">Step 1</h3>
+            <p>Select JPG images from your device.</p>
         </div>
-        <div style="background:#111827; padding:20px; border-radius:12px; border:1px solid rgba(255,255,255,0.08); text-align:center;">
-            <h3 style="color:#4ea1ff; margin-bottom:10px;">Step 2</h3>
-            <p>Images will load automatically.</p>
+        <div style="background:#111827;padding:20px;border-radius:12px;border:1px solid rgba(255,255,255,0.08);text-align:center;">
+            <h3 style="color:#4ea1ff;">Step 2</h3>
+            <p>Preview will be shown automatically.</p>
         </div>
-        <div style="background:#111827; padding:20px; border-radius:12px; border:1px solid rgba(255,255,255,0.08); text-align:center;">
+        <div style="background:#111827;padding:20px;border-radius:12px;border:1px solid rgba(255,255,255,0.08);text-align:center;">
             <h3 style="color:#4ea1ff;">Step 3</h3>
-            <p>Click Convert to PDF.</p>
+            <p>Click “Convert to PDF”.</p>
         </div>
-        <div style="background:#111827; padding:20px; border-radius:12px; border:1px solid rgba(255,255,255,0.08); text-align:center;">
+        <div style="background:#111827;padding:20px;border-radius:12px;border:1px solid rgba(255,255,255,0.08);text-align:center;">
             <h3 style="color:#4ea1ff;">Step 4</h3>
             <p>Download your PDF instantly.</p>
         </div>
     </div>
 
-    <!-- GOVT JOB CONTENT FIXED -->
-    <h2 style="color:#4ea1ff; font-size:26px; margin-bottom:15px;">Why Use Our JPG to PDF Converter?</h2>
-
-    <p style="color:#d1d5db; font-size:15px;">
-        Our free JPG to PDF Converter is designed for students, professionals, and job seekers who need fast and secure tools.
-        Whether you are uploading documents for <strong>SSC, Railway, UPSC, UP Police, UPSSSC, SSC MTS, CHSL, GD</strong> or any other exam,
-        our tool helps you compress, convert, and format your documents without losing quality.
+    <!-- GOVT JOB SECTION -->
+    <h2 style="margin-top:40px;">Why Use Our JPG to PDF Converter?</h2>
+    <p>
+        Perfect for government forms: SSC, Railway, UPSC, UP Police, PET, Lekhpal, VDO, and all online exams.
+        Make passport photo PDF, signature PDF, document under 100KB, scanned PDF, everything in seconds.
     </p>
 
-    <h3 style="color:#4ea1ff; margin-top:25px;">Perfect for Govt Job Forms & Online Exams</h3>
-    <p style="color:#d1d5db;">
-        Most government job forms require specific image sizes and PDF formats.
-        This tool helps you create:
-        <br>• Passport size photo PDF  
-        <br>• Signature PDF  
-        <br>• Document PDF under 100KB  
-        <br>• Combined PDF for online applications  
-        <br>• High-quality but low-size scanned PDFs  
-    </p>
+    <!-- FAQ -->
+    <h2 style="text-align:center;margin-top:40px;">Frequently Asked Questions</h2>
 
-    <h3 style="color:#4ea1ff; margin-top:25px;">Latest Govt Jobs You Can Apply Using Converted PDFs</h3>
-    <p style="color:#d1d5db;">
-        Our platform is used by thousands of candidates preparing for:
-        <br>✔ SSC GD Constable  
-        <br>✔ SSC MTS  
-        <br>✔ SSC CHSL  
-        <br>✔ SSC CGL  
-        <br>✔ Railway Group D  
-        <br>✔ Railway ALP & Technician  
-        <br>✔ RRB NTPC  
-        <br>✔ UP Police  
-        <br>✔ UPSSSC PET  
-        <br>✔ Lekhpal, VDO, Junior Assistant  
-        <br><br>
-        Almost every form needs perfect document size. This JPG to PDF tool helps you complete your application smoothly.
-    </p>
+    <details class="faq-item">
+        <summary>⭐ Is this tool 100% free?</summary>
+        <p>Yes, completely free. No limits, no signup.</p>
+    </details>
 
-    <h3 style="color:#4ea1ff; margin-top:25px;">Benefits of Using Our Tool</h3>
-    <p style="color:#d1d5db;">
-        • 100% free, no login required  
-        • Works offline inside your browser  
-        • No image is uploaded to any server  
-        • Supports JPG, JPEG, PNG  
-        • Fast conversion within seconds  
-        • Safe for sensitive documents like Aadhaar, PAN, Certificates  
-    </p>
+    <details class="faq-item">
+        <summary>⭐ Are my images safe?</summary>
+        <p>Everything happens offline in your browser. Nothing is uploaded.</p>
+    </details>
 
-    <h3 style="color:#4ea1ff; margin-top:25px;">Ideal for Students, Office Work & Job Hunters</h3>
-    <p style="color:#d1d5db;">
-        Whether you're preparing assignments, submitting job forms, or organizing office files,
-        this tool creates clean, high-quality PDF documents instantly.
-        It works on all devices — Android, Windows, Mac, and iPhone.
-    </p>
+    <details class="faq-item">
+        <summary>⭐ Multi-image supported?</summary>
+        <p>Yes, all JPGs will merge into one PDF.</p>
+    </details>
 
-    <!-- FAQ FIXED -->
-    <h2 style="text-align:center; color:#4ea1ff; margin-top:40px;">Frequently Asked Questions</h2>
-
-    <div style="max-width:850px;margin:20px auto;">
-
-        <details class="faq-item">
-            <summary style="font-size:16px;color:#4ea1ff;">⭐ Is this JPG to PDF converter free?</summary>
-            <p style="margin-top:10px;color:#d1d5db;">Yes, this tool is 100% free with no limits, no watermark, and no signup required.</p>
-        </details>
-
-        <details class="faq-item">
-            <summary style="font-size:16px;color:#4ea1ff;">⭐ Are my images uploaded to a server?</summary>
-            <p style="margin-top:10px;color:#d1d5db;">No, all processing happens inside your browser. Images never leave your device.</p>
-        </details>
-
-        <details class="faq-item">
-            <summary style="font-size:16px;color:#4ea1ff;">⭐ Can I convert multiple images at once?</summary>
-            <p style="margin-top:10px;color:#d1d5db;">Yes, you can select multiple JPG images and the tool will combine them into one PDF.</p>
-        </details>
-
-        <details class="faq-item">
-            <summary style="font-size:16px;color:#4ea1ff;">⭐ Does this work on mobile phones?</summary>
-            <p style="margin-top:10px;color:#d1d5db;">Yes, this tool works perfectly on Android, iPhone, and all browsers.</p>
-        </details>
-
-        <details class="faq-item">
-            <summary style="font-size:16px;color:#4ea1ff;">⭐ Will the PDF quality be good?</summary>
-            <p style="margin-top:10px;color:#d1d5db;">Yes, the PDF is generated in high resolution (HD quality) for best results.</p>
-        </details>
-
-    </div>
 </div>
 
 <footer>
     © iLabPDF 2025 — Free JPG to PDF Converter
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
-<script>
-    async function convertToPDF() {
-        const { jsPDF } = window.jspdf;
-        const pdf = new jsPDF();
-
-        let files = document.getElementById("images").files;
-
-        if (files.length === 0) {
-            alert("Please select at least one image.");
-            return;
-        }
-
-        for (let i = 0; i < files.length; i++) {
-            let img = await readFileAsDataURL(files[i]);
-
-            if (i > 0) pdf.addPage();
-            pdf.addImage(img, "JPEG", 10, 10, 190, 270);
-        }
-
-        pdf.save("converted.pdf");
-    }
-
-    function readFileAsDataURL(file) {
-        return new Promise((resolve) => {
-            let reader = new FileReader();
-            reader.onload = () => resolve(reader.result);
-            reader.readAsDataURL(file);
-        });
-    }
-</script>
+<!-- JS LIBRARY + YOUR SCRIPT -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script src="./script.js"></script>
+
 </body>
-    </html>
+</html>    
