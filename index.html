@@ -106,6 +106,17 @@
     <input type="file" id="images" accept="image/*" multiple>
     <button onclick="convertToPDF()">Convert to PDF</button>
 </div>
+   <div id="previewBox" style="display:none; margin:20px auto; max-width:480px;">
+    <h3 style="text-align:center; color:#4ea1ff;">Preview</h3>
+    <div id="previewList"></div>
+</div>
+
+<div id="pdfReady" style="display:none; text-align:center; margin-top:30px;">
+    <p style="font-size:16px; color:#4ea1ff;">Your PDF is ready!</p>
+    <button id="downloadBtn" style="padding:12px 18px; background:#4ea1ff; border:none; border-radius:10px; color:white; font-size:16px;">
+        Download PDF
+    </button>
+</div>
 
 <!-- PREVIEW SECTION -->
 <div id="previewBox" style="max-width:480px;margin:20px auto;display:none;padding:15px;
