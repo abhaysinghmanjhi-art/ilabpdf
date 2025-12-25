@@ -1,250 +1,173 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JPG to PDF Converter – Free Online | iLabPDF</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
-          content="Convert JPG images to PDF easily with iLabPDF. Fast, secure and free JPG to PDF converter that works offline directly inside your browser. Perfect for SSC, Railway, UPSC and govt job forms.">
-    <meta name="keywords"
-          content="jpg to pdf, convert jpg to pdf, image to pdf, ssc form photo pdf, railway photo pdf, govt job pdf, ilabpdf">
-    <meta name="author" content="iLabPDF">
+<title>JPG to PDF Converter – Free Online | iLabPDF</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #0b0f19;
-            color: #e5e7eb;
-        }
+<meta name="description"
+content="Convert JPG images to PDF easily with iLabPDF. Fast, secure and free JPG to PDF converter that works offline directly inside your browser. Perfect for SSC, Railway, UPSC and govt job forms.">
 
-        header {
-            text-align: center;
-            padding: 40px 20px;
-            background: linear-gradient(135deg, #10203a, #0b0f19);
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
+<meta name="keywords"
+content="jpg to pdf, convert jpg to pdf, image to pdf, ssc form photo pdf, railway photo pdf, govt job pdf, ilabpdf">
 
-        h1 { font-size: 32px; color: #4ea1ff; }
-        .sub { opacity: .8; margin-top: 5px; }
+<meta name="author" content="iLabPDF">
 
-        .box {
-            max-width: 480px;
-            margin: 25px auto;
-            padding: 25px;
-            background: #111827;
-            border-radius: 12px;
-            border: 1px solid rgba(255,255,255,0.08);
-            text-align: center;
-        }
-
-        input {
-            width: 100%;
-            padding: 13px;
-            border-radius: 8px;
-            border: none;
-        }
-
-        button {
-            width: 100%;
-            padding: 14px;
-            margin-top: 18px;
-            border: none;
-            border-radius: 10px;
-            background: #4ea1ff;
-            color: #fff;
-            font-size: 17px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        button:hover { background: #67b1ff; }
-
-        .content {
-            max-width: 850px;
-            margin: 40px auto;
-            padding: 20px;
-            line-height: 1.7;
-        }
-
-        h2 { color: #4ea1ff; margin-top: 42px; }
-
-        .faq-item {
-            background: #111827;
-            padding: 15px 20px;
-            border-radius: 10px;
-            margin: 12px 0;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .faq-item summary {
-            font-size: 18px;
-            color: #4ea1ff;
-            cursor: pointer;
-            outline: none;
-        }
-
-        footer {
-            margin-top: 55px;
-            padding: 25px;
-            text-align: center;
-            background: #0a0e17;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            opacity: .85;
-        }
-
-        /* Preview */
-        #previewBox {
-            max-width: 480px;
-            margin: 20px auto;
-            background: #111827;
-            padding: 20px;
-            border-radius: 12px;
-            border: 1px solid rgba(255,255,255,0.08);
-        }
-    </style>
+<style>
+body{margin:0;font-family:Arial,sans-serif;background:#0b0f19;color:#e5e7eb}
+header{text-align:center;padding:40px 20px;background:linear-gradient(135deg,#10203a,#0b0f19);border-bottom:1px solid rgba(255,255,255,.1)}
+h1{font-size:32px;color:#4ea1ff}
+.sub{opacity:.8;margin-top:5px}
+.box{max-width:480px;margin:25px auto;padding:25px;background:#111827;border-radius:12px;border:1px solid rgba(255,255,255,.08);text-align:center}
+input{width:100%;padding:13px;border-radius:8px;border:none}
+button{width:100%;padding:14px;margin-top:18px;border:none;border-radius:10px;background:#4ea1ff;color:#fff;font-size:17px;cursor:pointer;font-weight:bold}
+button:hover{background:#67b1ff}
+.content{max-width:850px;margin:40px auto;padding:20px;line-height:1.7}
+h2,h3{color:#4ea1ff;margin-top:42px}
+.faq-item{background:#111827;padding:15px 20px;border-radius:10px;margin:12px 0;border:1px solid rgba(255,255,255,.1)}
+.faq-item summary{font-size:18px;color:#4ea1ff;cursor:pointer}
+footer{margin-top:55px;padding:25px;text-align:center;background:#0a0e17;border-top:1px solid rgba(255,255,255,.1);opacity:.85}
+#previewBox{max-width:480px;margin:20px auto;background:#111827;padding:20px;border-radius:12px;border:1px solid rgba(255,255,255,.08);display:none}
+</style>
 </head>
 
 <body>
 
 <header>
-    <h1>JPG to PDF Converter</h1>
-    <p class="sub">Fast • Secure • Free Image to PDF Tool</p>
+<h1>JPG to PDF Converter</h1>
+<p class="sub">Fast • Secure • Free Image to PDF Tool</p>
 </header>
 
-<!-- UPLOAD BOX -->
 <div class="box">
-    <h2>Select Images</h2>
-    <input type="file" id="images" accept="image/*" multiple>
-    <button onclick="convertToPDF()">Convert to PDF</button>
+<h2>Select Images</h2>
+<input type="file" id="images" accept="image/*" multiple>
+<button onclick="convertToPDF()">Convert to PDF</button>
 </div>
 
-<!-- PREVIEW -->
-<div id="previewBox" style="display:none;">
-    <h3 style="color:#4ea1ff; text-align:center;">Preview</h3>
-    <div id="previewList"></div>
+<div id="previewBox">
+<h3 style="text-align:center">Preview</h3>
+<div id="previewList"></div>
 </div>
 
-<!-- PDF READY -->
-<div id="pdfReady" style="display:none; text-align:center; margin-top:25px;">
-    <p style="color:#4ea1ff; font-size:18px;">Your PDF is ready!</p>
-    <button id="downloadBtn" style="max-width:250px;">Download PDF</button>
+<div id="pdfReady" style="display:none;text-align:center;margin-top:25px">
+<p style="color:#4ea1ff;font-size:18px">Your PDF is ready!</p>
+<button id="downloadBtn" style="max-width:250px">Download PDF</button>
 </div>
 
 <div class="content">
 
-    <!-- HOW TO CONVERT -->
-    <h2>How to Convert JPG to PDF Online?</h2>
+<h2>How to Convert JPG to PDF Online?</h2>
+<p>
+Converting JPG images to PDF is now extremely simple with iLabPDF.
+This tool works 100% inside your browser — no upload, no server, no risk.
+Perfect for students, office work and Government Job Forms such as
+SSC, Railway, UPSC, UP Police, UPSSSC, State Exams etc.
+</p>
 
-    <p>
-        Converting JPG images to PDF is now extremely simple with iLabPDF. This tool works 100% inside your browser —
-        no upload, no server, no risk. Perfect for students, office work, and <strong>Government Job Forms</strong>
-        such as SSC, Railway, UPSC, UP Police, UPSSSC, State Exams etc.
-    </p>
+<h2 style="text-align:center">How to Convert JPG to PDF?</h2>
 
-    <!-- STEPS GRID -->
-    <h2 style="text-align:center;">How to Convert JPG to PDF?</h2>
+<p>
+<b>Step 1:</b> Select JPG images using the upload box.<br>
+<b>Step 2:</b> You will see instant preview of all images.<br>
+<b>Step 3:</b> Click on Convert to PDF button.<br>
+<b>Step 4:</b> Download your final PDF file instantly.
+</p>
 
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:20px; margin-top:25px;">
-        <div style="background:#111827; padding:20px; border-radius:12px; text-align:center;">
-            <h3 style="color:#4ea1ff;">Step 1</h3>
-            <p>Select JPG images using the upload box.</p>
-        </div>
-        <div style="background:#111827; padding:20px; border-radius:12px; text-align:center;">
-            <h3 style="color:#4ea1ff;">Step 2</h3>
-            <p>You will see instant preview of all images.</p>
-        </div>
-        <div style="background:#111827; padding:20px; border-radius:12px; text-align:center;">
-            <h3 style="color:#4ea1ff;">Step 3</h3>
-            <p>Click on Convert to PDF button.</p>
-        </div>
-        <div style="background:#111827; padding:20px; border-radius:12px; text-align:center;">
-            <h3 style="color:#4ea1ff;">Step 4</h3>
-            <p>Download your final PDF file instantly.</p>
-        </div>
-    </div>
+<h2>Why Use Our JPG to PDF Converter?</h2>
 
-    <!-- GOVT JOB CONTENT FULL -->
-    <h2>Why Use Our JPG to PDF Converter?</h2>
+<p>
+This JPG to PDF Tool is specially tuned for <b>Govt Job Form requirements</b>.
+Almost every exam form requires documents in very specific formats.
+</p>
 
-    <p>
-        This JPG to PDF Tool is specially tuned for <strong>Govt Job Form requirements</strong>.  
-        Almost every exam form requires image or document PDF in very specific sizes.
-        This tool makes it extremely easy & accurate.
-    </p>
+<h3>Perfect for Govt Job Forms</h3>
+<p>
+• Passport size photo PDF<br>
+• Signature PDF<br>
+• 20KB, 40KB, 50KB, 80KB PDFs<br>
+• Combine multiple JPGs<br>
+• Scanned documents
+</p>
 
-    <h3 style="color:#4ea1ff;">Perfect for Govt Job Forms</h3>
+<h3>Used by Candidates of:</h3>
+<p>
+✔ SSC GD, MTS, CHSL, CGL<br>
+✔ Railway Group D, ALP<br>
+✔ UP Police, UPSSSC PET<br>
+✔ All State Govt Exams
+</p>
 
-    <p>
-        Create perfect PDFs for:
-        <br>• Passport size photo PDF  
-        <br>• Signature PDF  
-        <br>• 20KB, 40KB, 50KB, 80KB document PDFs  
-        <br>• Combining multiple JPGs into one PDF  
-        <br>• Scanned documents PDF  
-    </p>
+<h3>Benefits of This Tool</h3>
+<p>
+• Free forever<br>
+• No login<br>
+• No watermark<br>
+• No upload — 100% privacy<br>
+• Works on all devices<br>
+• HD quality output
+</p>
 
-    <h3 style="color:#4ea1ff;">Used by Candidates of:</h3>
+<h2 style="text-align:center">Frequently Asked Questions</h2>
 
-    <p>
-        ✔ SSC GD  
-        ✔ SSC MTS  
-        ✔ SSC CHSL  
-        ✔ SSC CGL  
-        ✔ Railway Group D  
-        ✔ Railway ALP  
-        ✔ UP Police  
-        ✔ UPSSSC PET  
-        ✔ Lekhpal, VDO, Junior Assistant  
-        ✔ All State Govt Exams  
-    </p>
+<details class="faq-item">
+<summary>⭐ Is this JPG to PDF tool free?</summary>
+<p>Yes, completely free.</p>
+</details>
 
-    <h3 style="color:#4ea1ff;">Benefits of This Tool</h3>
+<details class="faq-item">
+<summary>⭐ Are my images uploaded to a server?</summary>
+<p>No. Everything is processed inside your device only.</p>
+</details>
 
-    <p>
-        • Free forever  
-        • No login  
-        • No watermark  
-        • No upload — 100% privacy  
-        • Works on Android, iPhone, Windows  
-        • HD quality PDF output  
-    </p>
+<details class="faq-item">
+<summary>⭐ Does it work on mobile phones?</summary>
+<p>Yes — Android, iPhone, Tablet, Windows — all supported.</p>
+</details>
 
-    <!-- FAQ -->
-    <h2 style="text-align:center;">Frequently Asked Questions</h2>
+<details class="faq-item">
+<summary>⭐ Can I merge multiple images into one PDF?</summary>
+<p>Yes, select multiple JPGs and the tool automatically merges them.</p>
+</details>
 
-    <details class="faq-item">
-        <summary>⭐ Is this JPG to PDF tool free?</summary>
-        <p>Yes, completely free. No limits, no signup.</p>
-    </details>
+<details class="faq-item">
+<summary>⭐ Is the PDF high quality?</summary>
+<p>Yes, output PDF is HD quality.</p>
+</details>
 
-    <details class="faq-item">
-        <summary>⭐ Are my images uploaded to a server?</summary>
-        <p>No. Everything is processed inside your device only. 100% secure.</p>
-    </details>
+<hr>
 
-    <details class="faq-item">
-        <summary>⭐ Does it work on mobile phones?</summary>
-        <p>Yes — Android, iPhone, Tablet, Windows — all supported.</p>
-    </details>
+<h2>About iLabPDF</h2>
+<p>
+iLabPDF is a free online platform designed to help users convert and manage
+PDF files easily without installing any software.
+</p>
 
-    <details class="faq-item">
-        <summary>⭐ Can I merge multiple images into one PDF?</summary>
-        <p>Yes, select multiple JPGs and the tool automatically merges them.</p>
-    </details>
+<h2>Privacy Policy</h2>
+<p>
+We respect your privacy. Files are processed locally in your browser and
+deleted automatically. We do not store personal data.
+</p>
 
-    <details class="faq-item">
-        <summary>⭐ Is the PDF high quality?</summary>
-        <p>Yes, output PDF is HD quality.</p>
-    </details>
+<h2>Terms & Conditions</h2>
+<p>
+By using iLabPDF, you agree that the service is provided "as is".
+Users are responsible for their files.
+</p>
+
+<h2>Disclaimer</h2>
+<p>
+iLabPDF is an independent tool and not affiliated with iLovePDF or any other brand.
+</p>
+
+<h2>Contact Us</h2>
+<p>Email: support@ilabpdf.com</p>
 
 </div>
 
 <footer>
-    © iLabPDF 2025 — Free JPG to PDF Converter
+© iLabPDF 2025 — Free JPG to PDF Converter
 </footer>
-
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script src="./script.js"></script>
