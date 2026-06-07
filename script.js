@@ -1,5 +1,5 @@
 // ---------- ELEMENTS ----------
-const fileInput = document.getElementById("images");
+const fileInput = document.getElementById("imageInput");
 const previewBox = document.getElementById("previewBox");
 const previewList = document.getElementById("previewList");
 const pdfReadyBox = document.getElementById("pdfReady");
