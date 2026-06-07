@@ -1,45 +1,38 @@
-// ---------- ELEMENTS ----------
-const fileInput = document.getElementById("imageInput");
-const previewBox = document.getElementById("previewBox");
-const previewList = document.getElementById("previewList");
-const pdfReadyBox = document.getElementById("pdfReady");
+const imageInput = document.getElementById("imageInput");
+const convertBtn = document.getElementById("compressBtn");
 const downloadBtn = document.getElementById("downloadBtn");
+const preview = document.getElementById("preview");
+const status = document.getElementById("status");
 
-// ---------- SHOW PREVIEW ----------
-fileInput.addEventListener("change", function () {
+let generatedPdf = null;
+
+// Preview Images
+imageInput.addEventListener("change", () => {
 
 ```
-let files = fileInput.files;
+preview.innerHTML = "";
+downloadBtn.style.display = "none";
+generatedPdf = null;
 
-if (files.length === 0) return;
+const files = imageInput.files;
 
-previewBox.style.display = "block";
-pdfReadyBox.style.display = "none";
-previewList.innerHTML = "";
+if (!files.length) return;
 
-[...files].forEach(file => {
+Array.from(files).forEach(file => {
 
-    let reader = new FileReader();
+    const reader = new FileReader();
 
-    reader.onload = function (e) {
+    reader.onload = function(e){
 
-        let div = document.createElement("div");
+        const img = document.createElement("img");
 
-        div.style.margin = "12px 0";
-        div.style.textAlign = "center";
+        img.src = e.target.result;
 
-        div.innerHTML = `
-            <p style="color:#4ea1ff;font-size:14px;margin-bottom:5px;">
-                ${file.name}
-            </p>
+        img.style.maxWidth = "120px";
+        img.style.margin = "8px";
+        img.style.borderRadius = "10px";
 
-            <img
-                src="${e.target.result}"
-                style="max-width:100%;border-radius:8px;"
-            >
-        `;
-
-        previewList.appendChild(div);
+        preview.appendChild(img);
     };
 
     reader.readAsDataURL(file);
@@ -49,74 +42,106 @@ previewList.innerHTML = "";
 
 });
 
-// ---------- CONVERT TO PDF ----------
-async function convertToPDF() {
+// Convert JPG To PDF
+convertBtn.addEventListener("click", async () => {
 
 ```
+const files = imageInput.files;
+
+if(!files.length){
+    alert("Please select JPG images");
+    return;
+}
+
+status.innerText = "Creating PDF...";
+
 const { jsPDF } = window.jspdf;
 
 const pdf = new jsPDF();
 
-let files = fileInput.files;
+for(let i = 0; i < files.length; i++){
 
-if (files.length === 0) {
+    const file = files[i];
 
-    alert("Please select at least one image.");
+    const imageData = await fileToDataURL(file);
 
-    return;
-}
+    const img = await loadImage(imageData);
 
-previewBox.style.display = "none";
+    const pageWidth = pdf.internal.pageSize.getWidth();
+    const pageHeight = pdf.internal.pageSize.getHeight();
 
-for (let i = 0; i < files.length; i++) {
+    const ratio = Math.min(
+        pageWidth / img.width,
+        pageHeight / img.height
+    );
 
-    let img = await readFileAsDataURL(files[i]);
+    const imgWidth = img.width * ratio;
+    const imgHeight = img.height * ratio;
 
-    if (i > 0) {
+    const x = (pageWidth - imgWidth) / 2;
+    const y = (pageHeight - imgHeight) / 2;
+
+    if(i > 0){
         pdf.addPage();
     }
 
     pdf.addImage(
-        img,
+        imageData,
         "JPEG",
-        10,
-        10,
-        190,
-        270
+        x,
+        y,
+        imgWidth,
+        imgHeight
     );
 }
 
-const blobPDF = pdf.output("blob");
+generatedPdf = pdf;
 
-const pdfUrl = URL.createObjectURL(blobPDF);
+status.innerText = "PDF Ready ✔";
 
-downloadBtn.onclick = function () {
-
-    const a = document.createElement("a");
-
-    a.href = pdfUrl;
-
-    a.download = "ilabpdf-jpg-to-pdf.pdf";
-
-    a.click();
-};
-
-pdfReadyBox.style.display = "block";
+downloadBtn.style.display = "block";
 ```
 
-}
+});
 
-// ---------- READ FILE ----------
-function readFileAsDataURL(file) {
+// Download PDF
+downloadBtn.addEventListener("click", () => {
+
+```
+if(!generatedPdf) return;
+
+generatedPdf.save("ilabpdf-jpg-to-pdf.pdf");
+```
+
+});
+
+// Helper Functions
+function fileToDataURL(file){
 
 ```
 return new Promise((resolve) => {
 
-    let reader = new FileReader();
+    const reader = new FileReader();
 
-    reader.onload = () => resolve(reader.result);
+    reader.onload = e => resolve(e.target.result);
 
     reader.readAsDataURL(file);
+
+});
+```
+
+}
+
+function loadImage(src){
+
+```
+return new Promise((resolve) => {
+
+    const img = new Image();
+
+    img.onload = () => resolve(img);
+
+    img.src = src;
 
 });
 ```
