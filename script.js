@@ -7,79 +7,118 @@ const downloadBtn = document.getElementById("downloadBtn");
 
 // ---------- SHOW PREVIEW ----------
 fileInput.addEventListener("change", function () {
-    let files = fileInput.files;
 
-    if (files.length === 0) return;
+```
+let files = fileInput.files;
 
-    previewBox.style.display = "block";
-    pdfReadyBox.style.display = "none";
-    previewList.innerHTML = ""; // clear old preview
+if (files.length === 0) return;
 
-    [...files].forEach(file => {
-        let reader = new FileReader();
+previewBox.style.display = "block";
+pdfReadyBox.style.display = "none";
+previewList.innerHTML = "";
 
-        reader.onload = function (e) {
-            let div = document.createElement("div");
-            div.style.margin = "12px 0";
-            div.style.textAlign = "center";
+[...files].forEach(file => {
 
-            div.innerHTML = `
-                <p style="color:#4ea1ff; font-size:14px; margin-bottom:5px;">
-                    ${file.name}
-                </p>
-                <img src="${e.target.result}"
-                    style="max-width:100%; border-radius:8px;">
-            `;
+    let reader = new FileReader();
 
-            previewList.appendChild(div);
-        };
+    reader.onload = function (e) {
 
-        reader.readAsDataURL(file);
-    });
+        let div = document.createElement("div");
+
+        div.style.margin = "12px 0";
+        div.style.textAlign = "center";
+
+        div.innerHTML = `
+            <p style="color:#4ea1ff;font-size:14px;margin-bottom:5px;">
+                ${file.name}
+            </p>
+
+            <img
+                src="${e.target.result}"
+                style="max-width:100%;border-radius:8px;"
+            >
+        `;
+
+        previewList.appendChild(div);
+    };
+
+    reader.readAsDataURL(file);
+
 });
+```
 
+});
 
 // ---------- CONVERT TO PDF ----------
 async function convertToPDF() {
-    const { jsPDF } = window.jspdf;
-    const pdf = new jsPDF();
 
-    let files = fileInput.files;
+```
+const { jsPDF } = window.jspdf;
 
-    if (files.length === 0) {
-        alert("Please select at least one image.");
-        return;
-    }
+const pdf = new jsPDF();
 
-    previewBox.style.display = "none"; // hide preview
+let files = fileInput.files;
 
-    for (let i = 0; i < files.length; i++) {
-        let img = await readFileAsDataURL(files[i]);
+if (files.length === 0) {
 
-        if (i > 0) pdf.addPage();
-        pdf.addImage(img, "JPEG", 10, 10, 190, 270);
-    }
+    alert("Please select at least one image.");
 
-    const blobPDF = pdf.output("blob");
-    const pdfUrl = URL.createObjectURL(blobPDF);
-
-    // DOWNLOAD BUTTON
-    downloadBtn.onclick = function () {
-        const a = document.createElement("a");
-        a.href = pdfUrl;
-        a.download = "converted.pdf";
-        a.click();
-    };
-
-    pdfReadyBox.style.display = "block";
+    return;
 }
 
+previewBox.style.display = "none";
 
-// ---------- READ FILE AS BASE64 ----------
+for (let i = 0; i < files.length; i++) {
+
+    let img = await readFileAsDataURL(files[i]);
+
+    if (i > 0) {
+        pdf.addPage();
+    }
+
+    pdf.addImage(
+        img,
+        "JPEG",
+        10,
+        10,
+        190,
+        270
+    );
+}
+
+const blobPDF = pdf.output("blob");
+
+const pdfUrl = URL.createObjectURL(blobPDF);
+
+downloadBtn.onclick = function () {
+
+    const a = document.createElement("a");
+
+    a.href = pdfUrl;
+
+    a.download = "ilabpdf-jpg-to-pdf.pdf";
+
+    a.click();
+};
+
+pdfReadyBox.style.display = "block";
+```
+
+}
+
+// ---------- READ FILE ----------
 function readFileAsDataURL(file) {
-    return new Promise((resolve) => {
-        let reader = new FileReader();
-        reader.onload = () => resolve(reader.result);
-        reader.readAsDataURL(file);
-    });
+
+```
+return new Promise((resolve) => {
+
+    let reader = new FileReader();
+
+    reader.onload = () => resolve(reader.result);
+
+    reader.readAsDataURL(file);
+
+});
+```
+
 }
